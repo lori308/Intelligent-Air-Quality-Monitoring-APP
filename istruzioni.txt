@@ -1,0 +1,36 @@
+Gentile Professore,
+Per eseguire correttamente l'applicazione, segua queste semplici istruzioni:
+1. Installazione delle dipendenze: 
+
+# Attivare un ambiente virtuale (opzionale ma consigliato)
+python -m venv venv
+venv\Scripts\activate  # Windows
+
+# oppure
+source venv/bin/activate  # macOS/Linux
+
+# Installare le librerie necessarie
+
+pip install streamlit pandas plotly requests folium openai psutil pymupdf llama-index-core llama-index-vector-stores-chroma llama-index-embeddings-cohere chromadb scipy numpy cohere python-dotenv
+
+ATTENZIONE TUTTE LE MIE CHIAVI API SONO INSERITE DIRETTAMENTE NEL CODICE PER
+SEMPLIFICARLE A LEI LA VISUALIZZAZIONE DEL PROGRAMMA SENZA DOVER FARE ULTERIORI
+PASSAGGI
+
+2. Avviare l'applicazione, tramite il terminale del proprio IDE 
+
+streamlit run aia_gj.py
+
+L'interfaccia sarà disponibile nel browser all'indirizzo: http://localhost:8501
+
+3. Accesso alla modalità developer nella finestra a comparsa sulla sinistra
+
+Per accedere agli strumenti avanzati dalla barra laterale:
+
+	•	Username: admin
+	•	Password: admin123
+
+
+Cordiali saluti, 
+Lorand Gjoshi
+

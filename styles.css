@@ -1,0 +1,427 @@
+/* Stile essenziale con variabili CSS per riutilizzo */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --background-color: #f8f9fa;
+    --text-color: #333333;
+    --border-color: #e0e0e0;
+    --accent-color: #0f6674;
+    --accent-hover: #0a4b56;
+    --card-background: #ffffff;
+    --good-color: #00ADEF;
+    --fair-color: #00A550;
+    --medium-color: #F7941E;
+    --poor-color: #FFD700;
+    --very-poor-color: #FF0000;
+    --extremely-poor-color: #800080;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #121212;
+        --text-color: #e0e0e0;
+        --border-color: #333333;
+        --accent-color: #4dabf7;
+        --accent-hover: #339af0;
+        --card-background: #1e1e1e;
+    }
+}
+
+/* Stili di base e layout */
+html, body, [class*="css"] {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Componenti comuni */
+.main-container, .metric-card, .search-form {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Header styles */
+.block-container {
+    padding-top: 1rem !important;
+}
+
+.header-wrapper {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    max-width: 100%;
+    height: auto;
+    min-width: 280px !important;
+    width: 280px !important;
+}
+
+.header-title {
+    color: #1a365d;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.header-subtitle {
+    color: #4a5568;
+    font-size: 1rem;
+    margin: 5px 0 0 0;
+    padding: 0;
+    line-height: 1.4;
+}
+
+.header-col-right {
+    padding-left: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .header-wrapper {
+        background-color: #1e2130;
+    }
+    .header-title {
+        color: #e2e8f0 !important;
+    }
+    .header-subtitle {
+        color: #a0aec0 !important;
+    }
+}
+
+/* Header fisso */
+.fixed-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.app-title {
+    color: var(--accent-color);
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Titoli e sezioni */
+.section-title {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Card di metriche */
+.metric-card {
+    transition: transform 0.2s;
+    padding: 15px;
+}
+
+.metric-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.metric-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin: 0.5rem 0;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.metric-unit {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    margin-left: 0.2rem;
+}
+
+/* Forecast cards */
+.forecast-card { 
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: var(--card-background);  
+    color: var(--text-color);  
+    border-radius: 10px;
+    padding: 15px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.forecast-title {
+    margin: 5px 0;
+    font-size: 1.2rem;
+}
+
+.forecast-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.forecast-data-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: left;
+    font-size: 0.85rem;
+}
+
+.forecast-data-column {
+    flex: 1;
+    min-width: 100px;
+    margin: 3px;
+}
+
+.forecast-data-row {
+    margin: 2px 0;
+}
+
+/* Palette di colori per inquinanti */
+.pm25-color { color: #ff6b6b; }
+.pm10-color { color: #f06595; }
+.no2-color { color: #cc5de8; }
+.so2-color { color: #5c7cfa; }
+.co-color { color: #20c997; }
+.o3-color { color: #ffb400; }  /* Nuovo colore per O3 */
+
+/* Pulsanti personalizzati */
+.custom-button, .primary-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    display: inline-block;
+    margin: 0.2rem 0;
+}
+
+.custom-button:hover, .primary-button:hover {
+    background-color: var(--accent-hover);
+}
+
+/* CSS per i bottoni di domande */
+.orange-button {
+    background-color: rgba(255, 165, 0, 0.3) !important; 
+    color: black !important;
+    border: 1px solid rgba(255, 165, 0, 0.5) !important;
+}
+
+.orange-button:hover {
+    background-color: rgba(255, 165, 0, 0.5) !important;
+    color: black !important;
+}
+
+.compare-button {
+    background-color: rgba(255, 165, 0, 0.4) !important;
+    color: black !important;
+    font-weight: bold !important;
+    border: 1px solid rgba(255, 165, 0, 0.6) !important;
+}
+
+.compare-button:hover {
+    background-color: rgba(255, 165, 0, 0.6) !important;
+}
+
+/* Form e cards */
+.search-form {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.question-button {
+    width: 100%;
+    text-align: left;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.question-button:hover {
+    background-color: var(--border-color);
+}
+
+/* Analysis section styles */
+.question-container {
+    background-color: var(--background-color);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.answer-section-header {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #f0f2f6;
+    border-radius: 5px;
+}
+
+.answer-section-title {
+    margin: 0;
+    color: #0f6674;
+    font-weight: bold;
+}
+
+.comparison-result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e6f7ff;
+    border-radius: 5px;
+    border-left: 4px solid #1890ff;
+}
+
+.comparison-title {
+    margin: 0;
+    color: #ff1818;
+    font-weight: bold;
+}
+
+/* Footer */
+.app-footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-color);
+    font-size: 0.8rem;
+}
+
+/* Stili per modelli */
+.model-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.model-card {
+    flex: 1;
+    min-width: 150px;
+    background-color: var(--card-background);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.model-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    border-color: var(--accent-color);
+}
+
+.model-card.selected {
+    border-color: var(--accent-color);
+    background-color: rgba(15, 102, 116, 0.1);
+    box-shadow: 0 5px 15px rgba(15, 102, 116, 0.2);
+}
+
+/* Accessibilità */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--accent-color) !important;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Stili per i grafici di comparazione */
+.comparison-result {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-left: 5px solid #4CAF50;
+}
+
+.comparison-title {
+    margin: 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+/* Migliora lo stile degli expander */
+.streamlit-expanderHeader {
+    font-weight: 600;
+    color: #1E88E5;
+}
+
+/* Stile per il container del grafico */
+.chart-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.comparison-result {
+    background-color: rgba(240, 240, 240, 0.8);
+    border-left: 4px solid #2e86de;
+    padding: 10px 15px;
+    margin: 15px 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.comparison-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2e5cb8;
+    margin: 0;
+}
+
+/* Stile per le celle della tabella comparative */
+.comparison-table-cell-better {
+    background-color: rgba(0, 200, 0, 0.1);
+}
+
+.comparison-table-cell-worse {
+    background-color: rgba(255, 0, 0, 0.1);
+}

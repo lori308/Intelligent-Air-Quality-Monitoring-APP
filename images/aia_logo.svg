@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <!-- Forma astratta che assomiglia a una nuvola -->
+  <path d="M120,130
+           C90,130 75,115 80,90
+           C85,65 120,60 140,75
+           C160,50 210,50 230,75
+           C270,60 310,80 295,120
+           C310,150 270,170 240,150
+           C200,180 150,175 120,130"
+        fill="#4CAF50" fill-opacity="0.9" stroke="none"/>
+  
+  <!-- Elementi geometrici astratti sovrapposti -->
+  <ellipse cx="180" cy="100" rx="110" ry="55" fill="#5CBA65" fill-opacity="0.5"/>
+  <ellipse cx="210" cy="115" rx="90" ry="40" fill="#3A9D4A" fill-opacity="0.6"/>
+  <path d="M130,90 C160,60 240,70 260,100 C240,120 190,125 130,90" fill="#66C078" fill-opacity="0.7"/>
+  
+  <!-- Testo AIA in azzurro con A senza trattino interno (solo V capovolte) - TUTTO CAPOVOLTO -->
+  <g transform="translate(320, 120) rotate(180)" text-anchor="middle">
+    <!-- Prima A (V capovolta senza trattino) -->
+    <path d="M-80,-40 L-60,10 L-40,-40" fill="none" stroke="#1E88E5" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- I -->
+    <line x1="0" y1="-40" x2="0" y2="10" stroke="#1E88E5" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- Seconda A (V capovolta senza trattino) -->
+    <path d="M40,-40 L60,10 L80,-40" fill="none" stroke="#1E88E5" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
